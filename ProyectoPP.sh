@@ -238,78 +238,7 @@ main() {
             ;;
     esac
 
-    while true; do
-        read -p "Seleccione una opción: " opcion
-        case $opcion in
-            1)
-                seccion="SCRUM"
-                ;;
-            2)
-                seccion="XP"
-                ;;
-            3)
-                seccion="Kanban"
-                ;;
-            4)
-                seccion="Crystal"
-                ;;
-            5)
-                echo "Saliendo..."
-                exit 0
-                ;;
-            *)
-                echo "Opción inválida. Intente de nuevo."
-                continue
-                ;;
-        esac
-
-        while true; do
-            mostrar_opciones_seccion "$seccion"
-            read -p "Seleccione una opción: " opcion_seccion
-            case $opcion_seccion in
-                1)
-                    agregar_informacion "$seccion"
-                    ;;
-                2)
-                    buscar_informacion "$seccion"
-                    ;;
-                3)
-                    eliminar_informacion "$seccion"
-                    ;;
-                4)
-                    leer_base_informacion "$seccion"
-                    ;;
-                5)
-                    echo "Volviendo al menú anterior..."
-                    break
-                    ;;
-                *)
-                    echo "Opción inválida. Intente de nuevo."
-                    ;;
-            esac
-
-            echo "¿Qué desea hacer a continuación?"
-            echo "    1. Realizar otra acción"
-            echo "    2. Volver al menú anterior"
-            echo "    3. Terminar la ejecución"
-            read -p "Seleccione una opción: " opcion_post_accion
-            case $opcion_post_accion in
-                1)
-                    continue
-                    ;;
-                2)
-                    break
-                    ;;
-                3)
-                    echo "Terminando la ejecución..."
-                    exit 0
-                    ;;
-                *)
-                    echo "Opción inválida. Volviendo al menú de acciones..."
-                    ;;
-            esac
-        done
-    done
+    
 }
 
 # Verificar que se pasó al menos un argumento
